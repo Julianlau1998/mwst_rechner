@@ -1,5 +1,5 @@
 {
-  "name": "gas_price_calculator",
+  "name": "MwSt_rechner",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
     "register-service-worker": "^1.7.2",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
+    "bulma": "^0.9.3",
+    "sass": "^1.49.8",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
@@ -21,6 +23,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "sass-loader": "^10",
     "vue-template-compiler": "^2.6.14"
   }
 }
