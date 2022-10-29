@@ -11,7 +11,7 @@
           <div class="column is-6 is-result-columns">
             <input
                 id="netto"
-                :value="rounded(netto)"
+                :value="netto"
                 @input="nettoInput($event.target.value)"
                 class="input mt-1 is-input"
                 type="number"
@@ -30,7 +30,7 @@
           <div class="column is-6">
             <input
                 id="percent"
-                :value="rounded(percent)"
+                :value="percent"
                 @input="percentInput($event.target.value)"
                 class="input mt-1 is-input"
                 type="number"
@@ -49,7 +49,7 @@
           <div class="column is-6">
             <input
                 id="tax"
-                :value="rounded(tax)"
+                :value="tax"
                 @input="taxInput($event.target.value)"
                 class="input mt-1 is-input"
                 type="number"
@@ -68,7 +68,7 @@
           <div class="column is-6">
             <input
                 id="brutto"
-                :value="rounded(brutto)"
+                :value="brutto"
                 @input="bruttoInput($event.target.value)"
                 class="input mt-1 is-input"
                 type="number"
@@ -107,33 +107,27 @@ export default {
   },
   methods: {
     nettoInput (val) {
-      val = parseFloat(val)
       this.netto = val
-      this.brutto = val + (val * this.percent / 100)
-      this.tax = val * this.percent / 100
-
-      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
-        window.webkit.messageHandlers.toggleMessageHandler.postMessage({
-          "message": `this is a test: ${this.tax}`
-        });
-      }
+      val = parseFloat(val)
+      this.brutto = val + (val * parseFloat(this.percent) / 100)
+      this.tax = val * parseFloat(this.percent) / 100
     },
     percentInput (val) {
-      val = parseFloat(val)
       this.percent = val
-      this.brutto = this.netto + (this.netto * val / 100)
-      this.tax = this.netto * val / 100
+      val = parseFloat(val)
+      this.brutto = this.rounded(parseFloat(this.netto) + (parseFloat(this.netto) * val / 100))
+      this.tax = this.rounded(parseFloat(this.netto) * val / 100)
     },
     taxInput (val) {
-      val = parseFloat(val)
       this.tax = val
-      this.percent = (val/(this.netto/100))
-      this.brutto = this.netto + (this.netto * val / 100)
+      val = parseFloat(val)
+      this.percent = this.rounded(val/(parseFloat(this.netto)/100))
+      this.brutto = this.rounded(parseFloat(this.netto) + (parseFloat(this.netto) * val / 100))
     },
     bruttoInput (val) {
-      val = parseFloat(val)
       this.brutto = val
-      this.netto = (val/(100 + this.percent) * 100)
+      val = parseFloat(val)
+      this.netto = this.rounded(val/(100 + parseFloat(this.percent)) * 100)
     },
     rounded (val) {
       return (Math.round(val * 100)/100).toFixed(2)
