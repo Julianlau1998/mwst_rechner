@@ -111,6 +111,12 @@ export default {
       this.netto = val
       this.brutto = val + (val * this.percent / 100)
       this.tax = val * this.percent / 100
+
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+        window.webkit.messageHandlers.toggleMessageHandler.postMessage({
+          "message": `this is a test: ${this.tax}`
+        });
+      }
     },
     percentInput (val) {
       val = parseFloat(val)
