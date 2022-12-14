@@ -109,6 +109,16 @@ select {
         padding-right: 1rem; 
         font-size: 1.2rem;
     }
+    &.is-border-secondary {
+         background: transparent;
+         border: 2px solid $secondary;
+         color: $primary;
+     }
+    &.is-ads-button {
+        min-width: 10rem;
+        min-height: 3rem;
+        font-size: 1.1rem;
+    }
 }
 
 .hr {

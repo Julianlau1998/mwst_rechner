@@ -91,6 +91,13 @@
         19%
       </button>
     </div>
+    <button
+        v-if="iosLiteApp"
+        @click="webviewTrigger"
+        class="button is-ads-button is-border-secondary mt-5"
+    >
+      Werbung Entfernen
+    </button>
   </div>
 </template>
 
@@ -105,12 +112,23 @@ export default {
       brutto: 119
     }
   },
+  computed: {
+    iosLiteApp () {
+      return window.webkit && window.webkit.messageHandlers
+    }
+  },
   methods: {
     nettoInput (val) {
       this.netto = val
       val = parseFloat(val)
       this.brutto = val + (val * parseFloat(this.percent) / 100)
       this.tax = val * parseFloat(this.percent) / 100
+
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+        window.webkit.messageHandlers.toggleMessageHandler.postMessage({
+          "message": `this is a test: ${this.tax}`
+        });
+      }
     },
     percentInput (val) {
       this.percent = val
@@ -131,6 +149,13 @@ export default {
     },
     rounded (val) {
       return (Math.round(val * 100)/100).toFixed(2)
+    },
+    webviewTrigger () {
+      if (this.iosLiteApp && window.webkit.messageHandlers.webviewTrigger) {
+        window.webkit.messageHandlers.webviewTrigger.postMessage({
+          "message": 'open AppStore:'
+        });
+      }
     }
   }
 }
