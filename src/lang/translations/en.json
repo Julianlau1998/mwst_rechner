@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "title": "Settings",
+    "currency": "Currency:",
+    "language": "Language:",
+    "languages": {
+      "german": "German",
+      "english": "English"
+    },
+    "home": "Home",
+    "defaults": "Default Rates"
+  },
+  "calculator": {
+    "netto": "VAT Excluded",
+    "brutto": "VAT included",
+    "tax": "VAT",
+    "percent": "VAT Percentage",
+    "removeAds": "Remove Ads"
+  }
+}

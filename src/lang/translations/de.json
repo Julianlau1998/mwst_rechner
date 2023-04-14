@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "title": "Einstellungen",
+    "currency": "Währung:",
+    "currencies": {
+      "pound": "£ Pfund Sterling",
+      "euro": "€ Euro",
+      "dollar": "$ Dollar"
+    },
+    "language": "Sprache:",
+    "languages": {
+      "german": "Deutsch",
+      "english": "Englisch"
+    },
+    "home": "Zurück",
+    "defaults": "Standard Werte"
+  },
+  "calculator": {
+    "netto": "Netto",
+    "brutto": "Brutto",
+    "tax": "MwSt",
+    "percent": "Prozentsatz",
+    "removeAds": "Werbung Entfernen"
+  }
+}

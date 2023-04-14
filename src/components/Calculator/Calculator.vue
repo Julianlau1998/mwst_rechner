@@ -5,7 +5,7 @@
         <div class="columns is-mobile is-justify-content-center is-align--center mt-2">
           <div class="column is-6 is-result-columns">
             <label for="price" class="is-size-4">
-              Netto:
+              {{ $t('calculator.netto') }}:
             </label>
           </div>
           <div class="column is-6 is-result-columns">
@@ -24,7 +24,7 @@
         <div class="columns is-mobile is-justify-content-center is-align-items-center">
           <div class="column is-6">
             <label for="shipping" class="is-size-4">
-              Prozentsatz:
+              {{ $t('calculator.percent') }}:
             </label>
           </div>
           <div class="column is-6">
@@ -43,7 +43,7 @@
         <div class="columns is-mobile is-justify-content-center is-align-items-center">
           <div class="column is-6">
             <label for="shipping" class="is-size-4">
-              MwSt:
+              {{ $t('calculator.tax') }}:
             </label>
           </div>
           <div class="column is-6">
@@ -62,7 +62,7 @@
         <div class="columns is-mobile is-justify-content-center is-align-items-center">
           <div class="column is-6">
             <label for="shipping" class="is-size-4">
-              Brutto:
+              {{ $t('calculator.brutto') }}:
             </label>
           </div>
           <div class="column is-6">
@@ -78,17 +78,17 @@
         </div>
       </div>
       <div class="hr mt-6 mb-6" />
-      <button @click="percentInput(5)" class="button is-primary">
-        5%
+      <button @click="percentInput(percent1)" class="button is-primary" :class="percent==percent1 ? 'is-selected' : ''">
+        {{ percent1 }}%
       </button>
-      <button @click="percentInput(7)" class="button is-primary">
-        7%
+      <button @click="percentInput(percent2)" class="button is-primary" :class="percent==percent2 ? 'is-selected' : ''">
+        {{ percent2 }}%
       </button>
-      <button @click="percentInput(16)" class="button is-primary">
-        16%
+      <button @click="percentInput(percent3)" class="button is-primary" :class="percent==percent3 ? 'is-selected' : ''">
+        {{ percent3 }}%
       </button>
-      <button @click="percentInput(19)" class="button is-primary">
-        19%
+      <button @click="percentInput(percent4)" class="button is-primary" :class="percent==percent4 ? 'is-selected' : ''">
+        {{ percent4 }}%
       </button>
     </div>
     <button
@@ -96,7 +96,7 @@
         @click="webviewTrigger"
         class="button is-ads-button is-border-secondary mt-5"
     >
-      Werbung Entfernen
+      {{ $t('calculator.removeAds') }}
     </button>
   </div>
 </template>
@@ -109,12 +109,39 @@ export default {
       netto: 100,
       percent: 19,
       tax: 19,
-      brutto: 119
+      brutto: 119,
+      percent1: 5,
+      percent2: 7,
+      percent3: 16,
+      percent4: 19
     }
   },
   computed: {
     iosLiteApp () {
       return window.webkit && window.webkit.messageHandlers
+    }
+  },
+  created() {
+    const percent = localStorage.getItem('percent')
+    if (percent) {
+      this.percent = JSON.parse(percent)
+      this.percentInput(this.percent)
+    }
+    const percent1 = localStorage.getItem('percent1')
+    if (percent1) {
+      this.percent1 = JSON.parse(percent1)
+    }
+    const percent2 = localStorage.getItem('percent2')
+    if (percent2) {
+      this.percent2 = JSON.parse(percent2)
+    }
+    const percent3 = localStorage.getItem('percent3')
+    if (percent3) {
+      this.percent3 = JSON.parse(percent3)
+    }
+    const percent4 = localStorage.getItem('percent4')
+    if (percent4) {
+      this.percent4 = JSON.parse(percent4)
     }
   },
   methods: {
@@ -133,6 +160,7 @@ export default {
     percentInput (val) {
       this.percent = val
       val = parseFloat(val)
+      localStorage.setItem('percent', JSON.stringify(val))
       this.brutto = this.rounded(parseFloat(this.netto) + (parseFloat(this.netto) * val / 100))
       this.tax = this.rounded(parseFloat(this.netto) * val / 100)
     },

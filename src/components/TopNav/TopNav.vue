@@ -9,11 +9,11 @@
             <div class="column settingsWrapper">
                 <div v-if="settings" class="settingsItems settings">
                     <span v-if="helpAvailable">
-                        <span @click="openInfo" class="is-icon-container is-pointer mt-6 setting noselect">
+                        <span @click="openSettings" class="is-icon-container is-pointer mt-6 setting noselect">
                             <i
-                                class="fas fa-info is-smallIcon pr-1"
+                                class="fas fa-wrench is-smallIcon pr-1"
                             />
-                            Info
+                            Settings
                         </span>
                     </span>
                     <!-- <div class="hr" />
@@ -55,9 +55,6 @@ export default {
         }
     },
     methods: {
-        share () {
-            this.$emit('share')
-        },
         async checkPlayBillingAvailable () {
             if ('getDigitalGoodsService' in window) {
                 const service = await window.getDigitalGoodsService('https://play.google.com/billing');
@@ -69,10 +66,10 @@ export default {
         help () {
             this.$router.push('/help')
         },
-        openInfo () {
+        openSettings () {
             // location.href = 'https://en.wikipedia.org/wiki/Body_mass_index'
           this.settings = false
-          this.$router.push('/info')
+          this.$router.push('/settings')
         },
         home () {
             if (this.$route.path === '/') return

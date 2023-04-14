@@ -119,6 +119,13 @@ select {
         min-height: 3rem;
         font-size: 1.1rem;
     }
+    &.is-selected {
+        border: 2px solid $third !important;
+    }
+}
+
+.button:hover {
+    background-color: $secondBackground !important;
 }
 
 .hr {
@@ -130,11 +137,6 @@ select {
         margin-top: -1rem;
         border-top: 2px solid #252525;
     }
-}
-
-.button:hover {
-    background-color: lightgray !important;
-    color: $secondBackground !important;
 }
 
 .input {
@@ -150,6 +152,11 @@ select {
     margin-top: 1rem;
     width: 60%;
     max-width: 18rem;
+
+    &.is-small {
+        font-size: 1.2em;
+        min-width: 3rem;
+    }
 }
 
 input[type=number] {
@@ -257,6 +264,20 @@ input[type=number] {
 .fade-leave-to,
 .fade-enter {
   opacity: 0;
+}
+
+
+/* Remove arrows from input fields */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 
