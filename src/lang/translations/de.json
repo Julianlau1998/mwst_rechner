@@ -1,4 +1,7 @@
 {
+  "main": {
+    "title": "MwSt-Rechner"
+  },
   "settings": {
     "title": "Einstellungen",
     "currency": "Währung:",

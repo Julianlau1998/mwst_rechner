@@ -3,7 +3,7 @@
         <div class="columns is-mobile">
             <div class="column pl-5 is-pointer">
                 <span @click="home">
-                    MwSt-Rechner
+                    {{ $t('main.title') }}
                 </span>
             </div>
             <div class="column settingsWrapper">
@@ -13,7 +13,7 @@
                             <i
                                 class="fas fa-wrench is-smallIcon pr-1"
                             />
-                            Settings
+                            {{ $t('settings.title') }}
                         </span>
                     </span>
                     <!-- <div class="hr" />

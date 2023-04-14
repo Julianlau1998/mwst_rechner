@@ -1,4 +1,7 @@
 {
+  "main": {
+    "title": "VAT-Calc"
+  },
   "settings": {
     "title": "Settings",
     "currency": "Currency:",
