@@ -4,6 +4,7 @@
   },
   "settings": {
     "title": "Einstellungen",
+    "removeAds": "Werbung Entfernen",
     "currency": "Währung:",
     "currencies": {
       "pound": "£ Pfund Sterling",

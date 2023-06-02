@@ -4,6 +4,7 @@
   },
   "settings": {
     "title": "Settings",
+    "removeAds": "Remove Ads",
     "currency": "Currency:",
     "language": "Language:",
     "languages": {

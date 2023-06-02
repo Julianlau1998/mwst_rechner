@@ -47,6 +47,13 @@
           <input type="number" class="input is-small" v-model="percent4" />
         </div>
       </div>
+      <button
+          v-if="iosLiteApp"
+          @click="webviewTrigger"
+          class="button is-ads-button is-border-secondary mb-6"
+      >
+        {{ $t('calculator.removeAds') }}
+      </button>
     </div>
     <button @click="home" class="button is-primary is-home-button mt-6">
         {{ $t('settings.home') }}
@@ -116,14 +123,22 @@ export default {
           localStorage.setItem('percent4', JSON.stringify(val))
         }
     },
+    computed: {
+      iosLiteApp () {
+        return window.webkit && window.webkit.messageHandlers
+      }
+    },
     methods: {
         home () {
             this.$router.push('/')
+        },
+        webviewTrigger () {
+          if (this.iosLiteApp && window.webkit.messageHandlers.webviewTrigger) {
+            window.webkit.messageHandlers.webviewTrigger.postMessage({
+              "message": 'open AppStore:'
+            });
+          }
         }
     }
 }
 </script>
-
-<style>
-
-</style>
