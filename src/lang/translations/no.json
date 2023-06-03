@@ -1,0 +1,24 @@
+{
+  "main": {
+    "title": "MVA-kalkulator"
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "removeAds": "Fjern annonser",
+    "currency": "Valuta:",
+    "language": "Språk:",
+    "languages": {
+      "german": "Tysk",
+      "english": "Engelsk"
+    },
+    "home": "Hjem",
+    "defaults": "Standardrater"
+  },
+  "calculator": {
+    "netto": "Ekskl. MVA",
+    "brutto": "Inkl. MVA",
+    "tax": "MVA",
+    "percent": "MVA-prosent",
+    "removeAds": "Fjern annonser"
+  }
+}

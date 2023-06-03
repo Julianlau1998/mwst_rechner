@@ -1,0 +1,24 @@
+{
+  "main": {
+    "title": "Calculadora de IVA"
+  },
+  "settings": {
+    "title": "Configuración",
+    "removeAds": "Eliminar Anuncios",
+    "currency": "Moneda:",
+    "language": "Idioma:",
+    "languages": {
+      "german": "Alemán",
+      "english": "Inglés"
+    },
+    "home": "Inicio",
+    "defaults": "Tarifas Predeterminadas"
+  },
+  "calculator": {
+    "netto": "Importe sin IVA",
+    "brutto": "Importe con IVA",
+    "tax": "IVA",
+    "percent": "Porcentaje de IVA",
+    "removeAds": "Eliminar Anuncios"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "main": {
+    "title": "Momsberäkning"
+  },
+  "settings": {
+    "title": "Inställningar",
+    "removeAds": "Ta bort annonser",
+    "currency": "Valuta:",
+    "language": "Språk:",
+    "languages": {
+      "german": "Tyska",
+      "english": "Engelska"
+    },
+    "home": "Hem",
+    "defaults": "Standardnivåer"
+  },
+  "calculator": {
+    "netto": "Exklusive moms",
+    "brutto": "Inklusive moms",
+    "tax": "Moms",
+    "percent": "Momsprocent",
+    "removeAds": "Ta bort annonser"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "main": {
+    "title": "Calcolo IVA"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "removeAds": "Rimuovi Annunci",
+    "currency": "Valuta:",
+    "language": "Lingua:",
+    "languages": {
+      "german": "Tedesco",
+      "english": "Inglese"
+    },
+    "home": "Home",
+    "defaults": "Tariffe Predefinite"
+  },
+  "calculator": {
+    "netto": "Importo Escluso IVA",
+    "brutto": "Importo Incluso IVA",
+    "tax": "IVA",
+    "percent": "Percentuale IVA",
+    "removeAds": "Rimuovi Annunci"
+  }
+}
