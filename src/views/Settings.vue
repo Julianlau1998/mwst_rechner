@@ -1,11 +1,11 @@
 <template>
   <div class="settings-page">
     <div class="is-settings-box">
-        <h1 class="header is-size-2 is-size-3-mobile mt-5 mb-5">
+        <h1 class="header is-size-2 is-size-3-mobile mt-5">
             {{ $t('settings.title') }}
         </h1>
 
-        <div class="columns is-justify-content-center is-mobile is-align-items-center mb-6 mt-4">
+        <div class="columns is-justify-content-center is-mobile is-align-items-center mb-6 mt-2">
             <div class="column is-3-desktop is-4-tablet is-5-mobile">
                 <div class="is-size-4">
                     {{ $t('settings.language') }}
@@ -26,14 +26,20 @@
                 </select>
             </div>
         </div>
-      <div class="columns is-justify-content-center is-mobile is-align-items-center mb-6 mt-negative-5">
+      <div
+          class="columns is-justify-content-center is-mobile is-align-items-center mb-5-5"
+          :class="iosLiteApp ? 'mt-negative-5-5' : 'mt-negative-5'"
+      >
         <div class="column is-12">
           <div class="is-size-4">
             {{ $t('settings.defaults') }}:
           </div>
         </div>
       </div>
-      <div class="columns is-justify-content-center is-mobile is-align-items-center mb-6 mt-negative-6">
+      <div
+          class="columns is-justify-content-center is-mobile is-align-items-center mt-negative-6"
+          :class="iosLiteApp ? 'mb-3' : 'mb-6'"
+      >
         <div class="column is-2-desktop is-2-tablet is-2-mobile">
           <input type="number" class="input is-small" v-model="percent1" />
         </div>
@@ -50,12 +56,12 @@
       <button
           v-if="iosLiteApp"
           @click="webviewTrigger"
-          class="button is-ads-button is-border-secondary mb-6"
+          class="button is-ads-button is-border-secondary mb-5-5"
       >
         {{ $t('calculator.removeAds') }}
       </button>
     </div>
-    <button @click="home" class="button is-primary is-home-button mt-6">
+    <button @click="home" class="button is-primary is-home-button mt-5-5">
         {{ $t('settings.home') }}
     </button>
   </div>

@@ -77,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div class="hr mt-6 mb-6" />
+      <div class="hr mt-6" :class=" !iosLiteApp ? 'mb-6' : 'mb-4'" />
       <button @click="percentInput(percent1)" class="button is-primary" :class="percent==percent1 ? 'is-selected' : ''">
         {{ percent1 }}%
       </button>
@@ -94,7 +94,8 @@
     <button
         v-if="iosLiteApp"
         @click="webviewTrigger"
-        class="button is-ads-button is-border-secondary mt-5"
+        class="button is-ads-button is-border-secondary"
+        :class=" !iosLiteApp ? 'mt-5' : 'mt-negative-1'"
     >
       {{ $t('calculator.removeAds') }}
     </button>
@@ -118,7 +119,7 @@ export default {
   },
   computed: {
     iosLiteApp () {
-      return window.webkit && window.webkit.messageHandlers
+       return window.webkit && window.webkit.messageHandlers
     }
   },
   created() {
