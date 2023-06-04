@@ -37,7 +37,7 @@ const setPercentDefaults = (a, b, c, d) => {
 
 let chosenLanguage = JSON.parse(localStorage.getItem('language'))
 if (chosenLanguage === null) {
-  if (navigator.language === 'de-DE') {
+  if (navigator.language === 'de') {
     chosenLanguage = 'German'
     setPercentDefaults(5, 7, 16, 19)
     localStorage.setItem('currency', JSON.stringify("€"))
