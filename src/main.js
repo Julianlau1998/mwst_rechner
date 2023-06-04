@@ -17,7 +17,8 @@ const messages = {
   Norwegian: langs.no,
   Swedish: langs.sv,
   Italian: langs.it,
-  Spanish: langs.es
+  Spanish: langs.es,
+  French: langs.fr
 }
 
 const setPercentDefaults = (a, b, c, d) => {
@@ -63,6 +64,10 @@ if (chosenLanguage === null) {
   } else if (navigator.language === 'es') {
     chosenLanguage = 'Spanish'
     setPercentDefaults(4, 5, 10, 21)
+    localStorage.setItem('currency', JSON.stringify("€"))
+  } else if (navigator.language === 'fr') {
+    chosenLanguage = 'French'
+    setPercentDefaults(5.5, 8.5, 10, 20)
     localStorage.setItem('currency', JSON.stringify("€"))
   } else {
     chosenLanguage = 'English'

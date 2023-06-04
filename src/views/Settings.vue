@@ -74,7 +74,7 @@ export default {
         return {
             currency: '',
             language: '',
-            langs: ['English', 'German', 'Norwegian', 'Swedish', 'Italian', 'Spanish'],
+            langs: ['English', 'German', 'Norwegian', 'Swedish', 'Italian', 'Spanish', 'French'],
             selectedLanguage: '',
             percent1: 5,
             percent2: 7,

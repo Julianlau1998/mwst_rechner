@@ -1,0 +1,24 @@
+{
+  "main": {
+    "title": "Calcul de TVA"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "removeAds": "Supprimer les publicités",
+    "currency": "Devise :",
+    "language": "Langue :",
+    "languages": {
+      "german": "Allemand",
+      "english": "Anglais"
+    },
+    "home": "Accueil",
+    "defaults": "Taux par défaut"
+  },
+  "calculator": {
+    "netto": "Montant HT",
+    "brutto": "Montant TTC",
+    "tax": "TVA",
+    "percent": "Pourcentage de TVA",
+    "removeAds": "Supprimer les publicités"
+  }
+}

@@ -4,6 +4,7 @@ import no from './translations/no.json'
 import sv from './translations/sv.json'
 import it from './translations/it.json'
 import es from './translations/es.json'
+import fr from './translations/fr.json'
 
 export default {
   en,
@@ -11,5 +12,6 @@ export default {
   no,
   sv,
   it,
-  es
+  es,
+  fr
 }
