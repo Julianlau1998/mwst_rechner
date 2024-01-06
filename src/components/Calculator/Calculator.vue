@@ -13,6 +13,7 @@
                 id="netto"
                 :value="netto"
                 @input="nettoInput($event.target.value)"
+                @click="$emit('click')"
                 class="input mt-1 is-input"
                 type="number"
                 placeholder="0"
@@ -32,6 +33,7 @@
                 id="percent"
                 :value="percent"
                 @input="percentInput($event.target.value)"
+                @click="$emit('click')"
                 class="input mt-1 is-input"
                 type="number"
                 placeholder="0"
@@ -51,6 +53,7 @@
                 id="tax"
                 :value="tax"
                 @input="taxInput($event.target.value)"
+                @click="$emit('click')"
                 class="input mt-1 is-input"
                 type="number"
                 placeholder="0"
@@ -70,6 +73,7 @@
                 id="brutto"
                 :value="brutto"
                 @input="bruttoInput($event.target.value)"
+                @click="$emit('click')"
                 class="input mt-1 is-input"
                 type="number"
                 placeholder="0"
@@ -151,14 +155,9 @@ export default {
       val = parseFloat(val)
       this.brutto = val + (val * parseFloat(this.percent) / 100)
       this.tax = val * parseFloat(this.percent) / 100
-
-      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
-        window.webkit.messageHandlers.toggleMessageHandler.postMessage({
-          "message": `this is a test: ${this.tax}`
-        });
-      }
     },
     percentInput (val) {
+      this.$emit('click')
       this.percent = val
       val = parseFloat(val)
       localStorage.setItem('percent', JSON.stringify(val))
